@@ -1,0 +1,18 @@
+<h2>movies</h2>
+
+{{#each movies}}
+    <p>
+        <a href="/movies/{{id}}">{{title}} {{gengre}}</a>
+    </p>
+{{/each}}
+
+<hr>
+
+<h2>Create movie</h2>
+
+<form action="/new-movies" method="post">
+    <input type="text" name="title" placeholder="title"> <br>
+    <input type="text" name="gengre" placeholder="gengre"> <br>
+
+    <input type="submit" value="Save">
+</form>
