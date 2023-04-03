@@ -5,11 +5,7 @@ const exphbs = require('express-handlebars')
 
 
 import * as moviesData from "./data/movies"
-import * as usersData from "./data/users"
-
 import { IMovie } from "./data/movies";
-import { IUser } from "./data/users";
-
 
 const app = express()
 
@@ -39,7 +35,7 @@ app.get('/movies', async (req, res) => {
 })
 
 // Saves a new movie
-app.post('/new-movie', async (req, res) => {
+app.post('/new-movies', async (req, res) => {
     const newmovie: IMovie = {
         title: req.body.title,
         gengre: req.body.gengre
@@ -75,46 +71,6 @@ app.post('/movies/:id/delete', async (req, res) => {
 })
 
 
-/// Users ///
-app.get('/users', async (req, res) => {
-    // TODO: Show all users
-    
-    const users = usersData.getAll()
-    res.render("users-list", { users })
-
-})
-
-app.post('/new-user', async (req, res) => {
-    const newUser: IUser = {
-        name: req.body.name,
-        description: req.body.description
-    }
-
-    usersData.add(newUser)
-
-    res.redirect('/users')
-})
-
-app.get('/users/:id', async (req, res) => {
-    const user = usersData.findById(req.params.id)
-
-    res.render('users-single', user)
-})
-
-app.post('/users/:id/update', async (req, res) => {
-    usersData.update(req.params.id, {
-        name: req.body.name,
-        description: req.body.description
-    })
-
-    res.redirect('/users')
-})
-
-app.post('/users/:id/delete', async (req, res) => {
-    usersData.deleteById(req.params.id)
-
-    res.redirect('/users')
-})
 
 
 
