@@ -66,7 +66,6 @@ app.post('/movies/:id/update', async (req, res) => {
 // Deletes a movie
 app.post('/movies/:id/delete', async (req, res) => {
     moviesData.deleteById(req.params.id)
-
     res.redirect('/movies')
 })
 

@@ -1,12 +1,12 @@
 <h2>{{title}} {{gengre}}</h2>
 
-<form action="/users/{{id}}/update" method="post">
-    <input type="text" name="firstname" placeholder="firstname" value="{{firstname}}"> <br>
-    <input type="text" name="lastname" placeholder="lastname" value="{{lastname}}"> <br>
+<form action="/movies/{{id}}/update" method="post">
+    <input type="text" name="title" placeholder="Title" value="{{title}}"> <br>
+    <input type="text" name="gengre" placeholder="Gengre" value="{{gengre}}"> <br>
 
     <input type="submit" value="Save">
 </form>
 
-<form action="/users/{{id}}/delete" method="post">
+<form action="/movies/{{id}}/delete" method="post">
     <input type="submit" value="Delete">
 </form>
