@@ -1,12 +1,13 @@
-* { font-family: Arial, Helvetica, sans-serif; }
+* { font-family: 'Times New Roman', Times, serif; }
 
 html {
     background-color: salmon;
     padding: 0 25px;
 }
 
+
 body {
-    background-color: rgb(177, 223, 241);
+    background-color: rgb(166, 191, 201);
     margin: 10px auto;
     max-width: 600px;
     box-shadow: 5px 5px 10px 0px grey;
@@ -15,6 +16,33 @@ body {
     text-align: center;
 }
 
-a:hover { opacity: 0.7; }
-img { max-width: 100%; }
+a {
+    font-size: large;
 
+}
+a:hover { opacity: 0.7; 
+font-size: larger;}
+
+a:visited {
+    color: black;
+}
+
+img { 
+    max-width: 100%;
+    padding-top: 10px; 
+}
+#createForm {
+    align-items: center;
+    text-align: center;
+}
+.button_div {
+    display: flex;
+    justify-content: center;
+}
+#createBtn {
+    display: block;
+
+    align-items: center;
+    text-align: center; 
+    
+}

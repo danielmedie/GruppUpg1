@@ -1,8 +1,8 @@
-<h2>movies</h2>
+<h2>Latest movies</h2>
 
 {{#each movies}}
     <p>
-        <a href="/movies/{{id}}">{{title}} {{gengre}}</a>
+        <a href="/movies/{{id}}">{{title}} {{gengre}} {{description}}</a>
     </p>
 {{/each}}
 
@@ -10,9 +10,11 @@
 
 <h2>Create movie</h2>
 
-<form action="/new-movies" method="post">
-    <input type="text" name="title" placeholder="Title"> <br>
-    <input type="text" name="gengre" placeholder="Gengre"> <br>
-
-    <input type="submit" value="Save">
+<form id="createForm"action="/new-movies" method="post">
+    <input class="createInput" type="text" name="title" placeholder="Title"> <br>
+    <input class="createInput" type="text" name="gengre" placeholder="Gengre"> <br>
+    <input class="createInput" type="text" name="decscription" placeholder="Description">
+    <div class="button_div">
+        <input class="createInput" type="submit" value="Save">
+    </div>
 </form>

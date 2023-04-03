@@ -2,24 +2,27 @@ export interface IMovie {
     id?: number,
     title: string,
     gengre: string,
-    // description: string
+    description: string
 }
 
 const movies = [
     {
         id: 1,
         title: "Avatar",
-        gengre: "SiFi"
+        gengre: "SiFi",
+        description: "Long but good"
     },
     {
         id: 2,
         title: "Bond",
-        gengre: "Action"
+        gengre: "Action",
+        description: "Short and sweet"
     },
     {
         id: 3,
         title: "Get Hard",
-        gengre: "Komedi"
+        gengre: "Komedi",
+        description: "MeH"
     },
 ]
 
@@ -43,7 +46,8 @@ export const add = (movie: IMovie) => {
     movies.push({
         id,
         title: movie.title,
-        gengre: movie.gengre
+        gengre: movie.gengre,
+        description: movie.description
     })
 }
 
@@ -54,6 +58,7 @@ export const update = (id: string, movie: IMovie) => {
 
     movies[i].title = movie.title
     movies[i].gengre = movie.gengre
+    movies[i].description = movie.description
 }
 
 export const deleteById = (id: string) => {

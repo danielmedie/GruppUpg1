@@ -38,7 +38,8 @@ app.get('/movies', async (req, res) => {
 app.post('/new-movies', async (req, res) => {
     const newmovie: IMovie = {
         title: req.body.title,
-        gengre: req.body.gengre
+        gengre: req.body.gengre,
+        description: req.body.description
     }
 
     moviesData.add(newmovie)
@@ -57,9 +58,9 @@ app.get('/movies/:id', async (req, res) => {
 app.post('/movies/:id/update', async (req, res) => {
     moviesData.update(req.params.id, {
         title: req.body.title,
-        gengre: req.body.gengre
+        gengre: req.body.gengre,
+        description: req.body.description
     })
-
     res.redirect('/movies')
 })
 
